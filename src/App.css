@@ -223,6 +223,7 @@ li:hover {
 .background {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   max-width: 100%;
   background-color: var(--background-color);
@@ -304,4 +305,7 @@ li:hover {
 
   grid-column-start: 3;
   grid-column-end: 5;
+}
+#arrow {
+  width: 10vw;
 }

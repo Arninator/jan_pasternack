@@ -4,6 +4,8 @@ import { TwitterTimelineEmbed, TwitterShareButton, TwitterFollowButton, TwitterH
 import ApiCalendar from 'react-google-calendar-api';
 import './App.css';
 import cover from './imgs/janCover.jpg';
+import janSitzt from './imgs/jan sitzt.jpg'
+import janGrinst from './imgs/20220504pj205.jpg'
 import logoWhite from './imgs/SPD_Logo_Weiss.png';
 import logoBlack from './imgs/SPD_Logo_Schwarz_RGB.png';
 
@@ -40,8 +42,8 @@ class App extends Component {
   componentDidMount () {
 
     // apiCalendar.handleAuthClick();
-    // fetch("https://www.googleapis.com/calendar/v3/calendars/ar.maxnold@gmail.com/events?key=AIzaSyB7GfNxM4TXXtDue-64TMEzOViC8dTIgmA")
-    fetch("https://www.googleapis.com/calendar/v3/calendars/sechzehngeteiltdurchneun@gmail.com/events?key=AIzaSyD3HySl2mo7m_5cjUwhltGmDt29yJ4U5uU")
+    fetch("https://www.googleapis.com/calendar/v3/calendars/ar.maxnold@gmail.com/events?key=AIzaSyB7GfNxM4TXXtDue-64TMEzOViC8dTIgmA")
+    // fetch("https://www.googleapis.com/calendar/v3/calendars/sechzehngeteiltdurchneun@gmail.com/events?key=AIzaSyD3HySl2mo7m_5cjUwhltGmDt29yJ4U5uU")
       .then(res => res.json())
       .then(
         (result) => {
@@ -119,11 +121,24 @@ class App extends Component {
         <div>
             <Header />
             <Body />
-            {this.state.termine.map((item) => {
-              return(
-                <div>{item.summary}</div>
-              )
-            })}
+            <div className='background fade-in'>
+              <div id="arrow" className='classic'>&larr;</div>
+              {this.state.termine.map((item, index) => {
+                // console.log("Start?: " + (item.start != undefined ? item.summary : ("NOPE wasIsAnders?: " + Object.keys(item))));
+                return(
+                  item.start != undefined ? 
+                    
+                  <div className='classic' key={"termin" + index} style={index > 2 ? {display: "none"} : {display: 'block'}}>
+                    <div></div>{item.summary}
+
+                  </div> 
+                    
+                  : ""
+                )
+              })}
+              <div className='classic'>&rarr;</div>
+            </div>
+            <Footer />
         </div>
         
     )
@@ -156,7 +171,7 @@ const Body = (props) => {
           <img id="cover-img" src={cover} alt="" />
           <div id="hello-div" className="background fade-in">
               <div id="hello" className="classic">
-                  <img id="vorstellungs-img" className="inside-img" src="src\imgs\jan sitzt.jpg" alt=""/>
+                  <img id="vorstellungs-img" className="inside-img" src={janSitzt} alt=""/>
                   <div>
                       <h1>MOIN</h1>
                       <p>Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Ultrices eros in cursus turpis massa tincidunt dui. Donec enim diam vulputate ut pharetra sit. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Justo donec enim diam vulputate ut pharetra sit amet. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Enim nunc faucibus a pellentesque sit amet porttitor eget dolor. Lacinia quis vel eros donec. Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Lorem mollis aliquam ut porttitor leo a. Faucibus nisl tincidunt eget nullam non. Massa tincidunt dui ut ornare. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Magna ac placerat vestibulum lectus mauris ultrices. Nibh tortor id aliquet lectus proin nibh nisl condimentum id. Dapibus ultrices in iaculis nunc sed augue lacus. Feugiat vivamus at augue eget arcu dictum varius duis at.
@@ -183,7 +198,7 @@ const Body = (props) => {
 
           <div className="background fade-in three">
               <div id="diesdas" className="classic">
-                  <img id="" className="inside-img" src="src\imgs\20220504pj205.jpg" alt=""/>
+                  <img id="" className="inside-img" src={janGrinst} alt=""/>
                   <div>
                       <h1>DIESDAS</h1>
                       <p>Non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor. Ultrices eros in cursus turpis massa tincidunt dui. Donec enim diam vulputate ut pharetra sit. Malesuada fames ac turpis egestas maecenas pharetra convallis posuere morbi. Justo donec enim diam vulputate ut pharetra sit amet. Adipiscing diam donec adipiscing tristique risus nec feugiat in. Enim nunc faucibus a pellentesque sit amet porttitor eget dolor. Lacinia quis vel eros donec. Faucibus et molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Lorem mollis aliquam ut porttitor leo a. Faucibus nisl tincidunt eget nullam non. Massa tincidunt dui ut ornare. Ullamcorper malesuada proin libero nunc consequat interdum varius sit. Eleifend quam adipiscing vitae proin sagittis nisl rhoncus. Magna ac placerat vestibulum lectus mauris ultrices. Nibh tortor id aliquet lectus proin nibh nisl condimentum id. Dapibus ultrices in iaculis nunc sed augue lacus. Feugiat vivamus at augue eget arcu dictum varius duis at.</p>
@@ -194,6 +209,18 @@ const Body = (props) => {
               </div>
           </div>
       </div>
+  )
+}
+const Footer = () => {
+  return(
+    <footer>
+      <ul>
+        <li>Impressum</li>
+        <li>Datenschutz</li>
+        <li>Kontakt</li>
+        <li>sonstiges</li>
+      </ul>
+    </footer>
   )
 }
 
