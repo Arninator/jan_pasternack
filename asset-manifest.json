@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/jan_pasternack/static/css/main.940566cf.css",
+    "main.css": "/jan_pasternack/static/css/main.0a357e19.css",
     "main.js": "/jan_pasternack/static/js/main.41836490.js",
     "static/js/787.0a169205.chunk.js": "/jan_pasternack/static/js/787.0a169205.chunk.js",
     "static/media/20220504pj205.jpg": "/jan_pasternack/static/media/20220504pj205.c0c6b5ef5254e10d8f17.jpg",
@@ -9,12 +9,12 @@
     "static/media/SPD_Logo_Schwarz_RGB.png": "/jan_pasternack/static/media/SPD_Logo_Schwarz_RGB.388f47a0d9758c58d4eb.png",
     "static/media/SPD_Logo_Weiss.png": "/jan_pasternack/static/media/SPD_Logo_Weiss.77e145ddb8c272522e48.png",
     "index.html": "/jan_pasternack/index.html",
-    "main.940566cf.css.map": "/jan_pasternack/static/css/main.940566cf.css.map",
+    "main.0a357e19.css.map": "/jan_pasternack/static/css/main.0a357e19.css.map",
     "main.41836490.js.map": "/jan_pasternack/static/js/main.41836490.js.map",
     "787.0a169205.chunk.js.map": "/jan_pasternack/static/js/787.0a169205.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.940566cf.css",
+    "static/css/main.0a357e19.css",
     "static/js/main.41836490.js"
   ]
 }
