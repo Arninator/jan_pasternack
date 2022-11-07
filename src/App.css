@@ -307,5 +307,6 @@ li:hover {
   grid-column-end: 5;
 }
 #arrow {
+  height: 5vh;
   width: 10vw;
 }
